@@ -91,7 +91,7 @@ fun OnBoardingScreenContent(
             text = "Get Started",
             style = TextStyle(
                 fontSize = 20.sp,
-                fontFamily = FontFamily(Font(R.font.inter_black)),
+                fontFamily = FontFamily(Font(R.font.inter_semi_bold)),
                 fontWeight = FontWeight(600),
                 color = Color.Black
             )
@@ -102,7 +102,7 @@ fun OnBoardingScreenContent(
             .offset(x = (-19).dp, y = (-39).dp)
             .width(186.dp)
             .height(186.dp),
-        painter = painterResource(id = R.drawable.donutthree),
+        painter = painterResource(id = R.drawable.perple),
         contentDescription = "image description",
         contentScale = ContentScale.FillBounds
     )
@@ -126,10 +126,10 @@ fun OnBoardingScreenContent(
     )
     Image(
         modifier=Modifier
-            .offset(x = 195.dp, y = 360.dp)
+            .offset(x = 290.dp, y = 390.dp)
             .width(209.dp)
             .height(165.dp),
-        painter = painterResource(id = R.drawable.donutfour),
+        painter = painterResource(id = R.drawable.cake),
         contentDescription = "image description",
         contentScale = ContentScale.FillBounds
     )

@@ -97,7 +97,7 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
                 contentDescription = null,
                 contentScale = ContentScale.None,
                 modifier = Modifier
-                    .offset(x = 100.dp, y = 0.dp)
+                    .offset(x = 120.dp, y = 0.dp)
                     .width(45.dp)
                     .height(45.dp)
                     .background(color = Color(0xFFFED8DF), shape = RoundedCornerShape(size = 15.dp))
@@ -114,23 +114,40 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
             text = "Today Offers",
             style = TextStyle(
                 fontSize = 20.sp,
-                fontFamily = FontFamily(Font(R.font.inter_regular)),
+                fontFamily = FontFamily(Font(R.font.inter_medium)),
                 fontWeight = FontWeight(600),
             )
         )
         val image = listOf(
             R.drawable.donuts,
             R.drawable.strawberrydonuts,
-            R.drawable.donutsimagecard,
             R.drawable.strawberrydonuts,
-            R.drawable.donutsimagecard,
-            R.drawable.donutsimagecard,
             R.drawable.donuts,
             R.drawable.strawberrydonuts,
-            R.drawable.donutsimagecard,
             R.drawable.strawberrydonuts,
-            R.drawable.donutsimagecard,
-            R.drawable.donutsimagecard
+            R.drawable.donuts,
+            R.drawable.strawberrydonuts,
+            R.drawable.strawberrydonuts,
+            R.drawable.donuts,
+            R.drawable.strawberrydonuts,
+            R.drawable.strawberrydonuts,
+        )
+        val imagePage = listOf(
+            R.drawable.strawberry_wheel,
+            R.drawable.chocolate_glaze,
+            R.drawable.strawberry_wheel,
+            R.drawable.chocolate_glaze,
+            R.drawable.strawberry_wheel,
+            R.drawable.chocolate_glaze,
+            R.drawable.strawberry_wheel,
+            R.drawable.chocolate_glaze,
+            R.drawable.strawberry_wheel,
+            R.drawable.chocolate_glaze,
+            R.drawable.strawberry_wheel,
+            R.drawable.chocolate_glaze,
+            R.drawable.strawberry_wheel,
+            R.drawable.chocolate_glaze,
+
         )
         val color = listOf(
             Blue,
@@ -161,6 +178,20 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
             "Strawberry Wheel",
             "Chocolate Cherry",
         )
+        val namesPager = listOf(
+            "Strawberry Wheel",
+            "Chocolate Glaze",
+            "Strawberry Wheel",
+            "Chocolate Glaze",
+            "Strawberry Wheel",
+            "Chocolate Glaze",
+            "Strawberry Wheel",
+            "Chocolate Glaze",
+            "Strawberry Wheel",
+            "Chocolate Glaze",
+            "Strawberry Wheel",
+            "Chocolate Glaze",
+        )
         val pagerState = rememberPagerState()
         HorizontalPager(
             pageCount = image.size,
@@ -171,10 +202,11 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
                 .wrapContentHeight()
                 .padding(top = 80.dp),
             verticalAlignment = Alignment.CenterVertically,
-            pageSize = PageSize.Fixed(240.dp)
+            pageSize = PageSize.Fixed(250.dp)
         )
         { index ->
             Box() {
+
 
                 Card(
                     modifier = Modifier
@@ -184,24 +216,13 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
                             spotColor = Color(0x1A000000),
                             ambientColor = Color(0x1A000000)
                         )
-                        .width(250.dp)
+                        .width(193.dp)
                         .height(325.dp)
                         .background(
                             color = color[1],
                             shape = RoundedCornerShape(size = 20.dp)
                         ).clickable { onClickCard() }, colors = CardDefaults.cardColors(color[index])
                 ) {
-                    Box() {
-                        Image(
-                            painterResource(id = image[index]),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .width(250.dp)
-                                .height(200.dp)
-                                .padding(start = 64.dp),
-                            contentScale = ContentScale.FillBounds,
-                        )
-                    }
 
                 }
                 Image(
@@ -220,7 +241,7 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
                         .offset(x = 24.dp, y = 205.dp)
                         .wrapContentSize()
                         .height(19.dp),
-                    text = names[index],
+                    text = namesPager[index],
                     style = TextStyle(
                         fontSize = 16.sp,
                         fontFamily = FontFamily(Font(R.font.inter_semi_bold)),
@@ -243,7 +264,7 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
                 )
                 Text(
                     modifier = Modifier
-                        .offset(x = 140.dp, y = 291.dp)
+                        .offset(x = 105.dp, y = 291.dp)
                         .width(28.dp)
                         .height(17.dp),
                     text = "$20",
@@ -259,7 +280,7 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
 
                 Text(
                     modifier = Modifier
-                        .offset(x = 172.dp, y = 283.dp)
+                        .offset(x = 138.dp, y = 283.dp)
                         .width(40.dp)
                         .height(27.dp),
                     text = "$16",
@@ -270,6 +291,22 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
                     )
                 )
 
+
+                Box(modifier = Modifier.width(362.dp).offset(x = 15.dp)
+                    .height(203.dp)) {
+                    Image(
+                        painterResource(id = imagePage[index]),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .width(362.dp)
+                            .height(203.dp)
+                            .padding(start = 64.dp),
+                        contentScale = ContentScale.FillBounds,
+                    )
+                }
+
+
+
             }
 
 
@@ -277,7 +314,7 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
 
         Text(
             modifier = Modifier
-                .offset(x = 39.dp, y = 20.dp)
+                .offset(x = 39.dp, y = 40.dp)
                 .width(70.dp)
                 .height(24.dp),
             text = "Donuts",
@@ -295,7 +332,7 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
             modifier = Modifier
                 .wrapContentSize()
                 .wrapContentHeight()
-                .padding(top = 35.dp),
+                .padding(top = 73.dp),
             verticalAlignment = Alignment.CenterVertically,
             pageSize = PageSize.Fixed(150.dp)
         )
@@ -317,17 +354,7 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
                             shape = RoundedCornerShape(size = 20.dp)
                         ).clickable { onClickCard() }, colors = CardDefaults.cardColors(Color.White)
                 ) {
-                    Box() {
-                        Image(
-                            painterResource(image[index]),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .offset(x = 10.dp, y = 0.dp)
-                                .width(100.dp)
-                                .height(100.dp),
-                            contentScale = ContentScale.FillBounds,
-                        )
-                    }
+
 
                 }
 
@@ -358,6 +385,20 @@ fun HomeScreenContent(onClickCard: () -> Unit) {
                         color = Color(0xFFFF7074),
                     )
                 )
+
+                Box(modifier = Modifier
+                    .width(104.dp)
+                    .height(112.dp)) {
+                    Image(
+                        painterResource(image[index]),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .offset(x = 10.dp, y = 0.dp)
+                            .width(100.dp)
+                            .height(100.dp),
+                        contentScale = ContentScale.FillBounds,
+                    )
+                }
             }
         }
 

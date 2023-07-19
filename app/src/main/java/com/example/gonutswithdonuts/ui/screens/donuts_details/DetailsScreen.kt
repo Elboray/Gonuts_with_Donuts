@@ -127,7 +127,7 @@ fun DetailsScreenContent(onClickBack: () -> Unit) {
         SuggestionChipLayout()
         Row(modifier = Modifier.padding(top = 370.dp, start = 40.dp).fillMaxWidth().fillMaxSize(), horizontalArrangement = Arrangement.Center  ) {
             Text(
-                modifier = Modifier
+                modifier = Modifier.padding(top = 12.dp)
                     .width(54.dp)
                     .height(36.dp),
                 text = "£16",
@@ -161,8 +161,6 @@ fun DetailsScreenContent(onClickBack: () -> Unit) {
                         color = Color(0xFFFFFFFF),
                     )
                 )
-
-
             }
 
         }
@@ -175,7 +173,7 @@ fun DetailsScreenContent(onClickBack: () -> Unit) {
         contentDescription = null,
         contentScale = ContentScale.None,
         modifier = Modifier
-            .offset(x = 320.dp, y = 380.dp)
+            .offset(x = 340.dp, y = 380.dp)
             .width(45.dp)
             .height(45.dp)
             .background(color = Color.White, shape = RoundedCornerShape(size = 15.dp))
